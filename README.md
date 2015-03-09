@@ -1,4 +1,4 @@
-# mbark
+# mBark
 Meetup App for Getting Dogs Together at Dogparks!
 
 Part of Devbootcamp Phase 2 P10 project.
