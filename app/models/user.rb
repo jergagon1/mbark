@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 6}
   validates :email, uniqueness: true
 
+  has_many :dogs
 
   include BCrypt
 

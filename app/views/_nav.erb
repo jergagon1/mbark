@@ -1,0 +1,14 @@
+<nav>
+  <ul>
+    <li><a href="/mbarks">mBarks</a></li>
+    <li><a href="/users/<%= current_user.id %>">my Profile</a></li>
+    <li><a href="/users">users</a></li>
+    <li><a href="/dogs">dogs</a></li>
+    <li>
+      <form id="sign-out" action="/sessions/<%= current_user.id %>" method="post">
+        <input name="_method" type="hidden" value="delete" />
+        <input type="submit" value="Sign Out">
+      </form>
+    </li>
+  </ul>
+</nav>

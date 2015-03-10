@@ -1,3 +1,5 @@
 class Dog < ActiveRecord::Base
-  # Remember to create a migration!
+  validates :name, presence: true
+  validates :description, presence: true
+
 end
