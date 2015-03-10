@@ -1,0 +1,13 @@
+<%= erb :_nav, :layout => false %>
+
+<main>
+  <h1>Profile</h1>
+  <div id="contact">
+    <h2><%= @current_user.username %></h2>
+    <p><%= @current_user.email %></p>
+    <p><%= @current_user.zipcode %></p>
+  </div>
+  <div id="dog_info">
+    <h2>Your Dogs</h2>
+  </div>
+</main>

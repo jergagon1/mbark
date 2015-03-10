@@ -2,18 +2,29 @@
 
 #render home page
 get '/' do
+  @users = User.all.sort
   erb :index
 end
 
-# render sign-in partial
-# get '/sessions/new' do
-#   erb :_sign_in
-# end
+get '/users' do
+  @users = User.all.sort
+  erb :users
+end
 
-# # render sign-up partial
-# get '/users/new' do
-#   erb :_sign_up
-# end
+get '/users/:id' do
+  @current_user = User.find_by(id: params[:id])
+  erb :profile
+end
+
+get '/mbarks' do
+  @mbarks = Mbark.all
+  erb :mbarks
+end
+
+get '/dogs' do
+  @dogs  = Dog.all
+  erb :dogs
+end
 
 
 # POST ===========================================================
@@ -21,12 +32,11 @@ end
 # sign-in
 post '/sessions' do
   @current_user = User.find_by(email: params[:email])
-  p @current_user
   if @current_user && @current_user.authenticate(params[:password])
     session[:user_id] = @current_user.id
-    redirect '/'
+    redirect '/mbarks'
   else
-    redirect '/sessions/new'
+    redirect '/'
   end
 end
 
@@ -37,9 +47,9 @@ post '/users' do
   if user.save
     session[:user_id]=user.id
   else
-    redirect '/users/new'
+    redirect '/'
   end
-  redirect '/'
+  redirect "/users/#{user.id}"
 end
 
 # PUT ===========================================================

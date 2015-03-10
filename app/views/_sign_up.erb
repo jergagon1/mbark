@@ -1,1 +1,21 @@
-<p>in sign up</p>
+<h3>Sign Up</h3>
+
+<% if @error %>
+  <div class="errors"><%= @error %></div>
+<% end %>
+
+<form id="sign-up" method="post" action="/users">
+  <label class="label" for="user[username]">Username</label>
+  <input type="text" name="user[username]" placeholder="e.g., joe" >
+  <br />
+  <label class="label" for="user[email]">Email</label>
+  <input type="email" name="user[email]" placeholder="e.g., me@example.com" >
+  <br />
+   <label class="label" for="user[zipcode]">Zipcode</label>
+  <input type="text" name="user[zipcode]" placeholder="94107">
+  <br />
+  <label class="label" for="user[password]">Password</label>
+  <input type="password" name="user[password]" placeholder="6 or more characters">
+  <br />
+  <div class="submit"><input type="submit" value="Sign Up"></div>
+</form>
