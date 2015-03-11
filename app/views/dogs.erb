@@ -2,9 +2,9 @@
 
 <main>
   <h1>Dogs</h1>
-    <ul>
+  <ul>
     <% @dogs.each do |dog|  %>
-      <li><%= "#{dog.id} #{dog.user_id} #{dog.image} #{dog.breed} #{dog.size} #{dog.description}" %></li>
+      <li><img class="dog_icon" src="<%= dog.image %>" /><%= "#{dog.name} #{dog.id} #{dog.breed} #{dog.size} #{dog.description}" %></li>
     <% end  %>
   </ul>
 </main>
