@@ -1,5 +1,4 @@
 <%= erb :_nav, :layout => false %>
-
 <main>
   <h1>Profile</h1>
   <div id="contact">
@@ -7,7 +6,24 @@
     <p><%= @current_user.email %></p>
     <p><%= @current_user.zipcode %></p>
   </div>
-  <div id="dog_info">
+  <div id="user_dogs">
     <h2>Your Dogs</h2>
+    <div i>
+      <% @current_user.dogs.each do |dog| %>
+      <div class="dog_info">
+        <ul>
+          <li><img src="<%=  dog.image %>" /></li>
+          <li><%=  dog.name %></li>
+          <li><%=  dog.breed %></li>
+          <li><%=  dog.size %></li>
+          <li><p><%=  dog.description %></p></li>
+        </ul>
+      </div>
+      <% end %>
+    </ul>
+  </div>
+  <div id="add_dogs">
+    <a href="/dogs/new">Add a Dog</a>
+    <%= erb :_dogs_new, :layout => false  %>
   </div>
 </main>

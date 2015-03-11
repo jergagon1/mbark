@@ -1,9 +1,12 @@
 class User < ActiveRecord::Base
+  has_many :dogs
+  has_many :mbarks
+  has_many :events, through: :mbarks
+
   validates :email, :password, presence: true
   validates :password, length: {minimum: 6}
   validates :email, uniqueness: true
 
-  has_many :dogs
 
   include BCrypt
 
