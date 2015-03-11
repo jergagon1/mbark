@@ -41,3 +41,24 @@ main {
   width: 100%;
 }
 
+/**************************** profile styling *********************************/
+
+
+.dog_info img {
+  display: inline-block;
+  width : 10rem;
+
+}
+
+.dog_info ul {
+  list-style: none;
+}
+
+/**************************** dog page styling *********************************/
+
+
+
+.dog_icon {
+  display: inline-block;
+  width : 5rem;
+}

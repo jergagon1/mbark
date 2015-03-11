@@ -57,9 +57,18 @@ post '/dogs/new' do
   dog = Dog.new(params[:dog])
   dog.user_id = session[:user_id]
   if dog.save
-    redirect "/users/#{@current_user.id}"
+    redirect "/users/#{current_user.id}"
   end
 end
+
+post '/mbarks/new' do
+  event = Event.new(params[:event])
+  current_user.events << event
+  if event.save
+    redirect "/mbarks"
+  end
+end
+
 
 # PUT ===========================================================
 

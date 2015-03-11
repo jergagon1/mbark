@@ -10,7 +10,7 @@ class Event < ActiveRecord::Base
   validates :description, presence: true
 
   def date_cannot_be_in_past
-    errors.add(:date, "can't be in the past") if !expiration_date.blank? and expiration_date < Date.today
+    errors.add(:date, "can't be in the past") if !date.blank? and date < Date.today
   end
 
 end

@@ -9,7 +9,7 @@
   <div id="user_dogs">
     <h2>Your Dogs</h2>
     <div i>
-      <% @current_user.dogs.each do |dog| %>
+      <% @current_user.dogs.sort.each do |dog| %>
       <div class="dog_info">
         <ul>
           <li><img src="<%=  dog.image %>" /></li>
