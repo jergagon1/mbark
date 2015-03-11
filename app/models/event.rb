@@ -1,4 +1,7 @@
 class Event < ActiveRecord::Base
+  has_many :mbarks
+  has_many :users, through: :mbarks
+
   validate :date_cannot_be_in_past
   validates :time, presence: true
   validates :street_address, presence: true

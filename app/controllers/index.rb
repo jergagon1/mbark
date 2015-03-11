@@ -52,6 +52,15 @@ post '/users' do
   redirect "/users/#{user.id}"
 end
 
+# create a new dog
+post '/dogs/new' do
+  dog = Dog.new(params[:dog])
+  dog.user_id = session[:user_id]
+  if dog.save
+    redirect "/users/#{@current_user.id}"
+  end
+end
+
 # PUT ===========================================================
 
 
