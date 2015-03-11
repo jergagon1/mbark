@@ -1,4 +1,6 @@
 <%= erb :_nav, :layout => false %>
+<%= erb :_weather, :layout => false %>
+
 <main>
   <h1>Profile</h1>
   <div id="contact">
@@ -8,7 +10,7 @@
   </div>
   <div id="user_dogs">
     <h2>Your Dogs</h2>
-    <div i>
+    <div>
       <% @current_user.dogs.sort.each do |dog| %>
       <div class="dog_info">
         <ul>
