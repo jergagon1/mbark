@@ -1,9 +1,9 @@
 <form id="create-mbark" method="post" action="/mbarks/new">
   <label class="label" for="event[date]">Date</label>
-  <input type="text" name="event[date]" placeholder="2015-04-01" >
+  <input type="date" name="event[date]" placeholder="2015-04-01" >
   <br />
   <label class="label" for="event[time]">Time</label>
-  <input type="text" name="event[time]" placeholder="14:00" >
+  <input type="time" name="event[time]" placeholder="14:00" >
   <br />
    <label class="label" for="event[street_address]">Park Address</label>
   <input type="text" name="event[street_address]" placeholder="123 Willow Rd.">
@@ -18,7 +18,8 @@
   <input type="text" name="event[zip]" placeholder="94609">
   <br />
   <label class="label" for="event[description]">Description</label>
-  <textarea name="event[description]" placeholder="CA"></textarea>
+  <br />
+  <textarea name="event[description]" placeholder="An awesome event in the park!"></textarea>
   <br />
   <div class="submit"><input type="submit" value="Create mBark!"></div>
 </form>

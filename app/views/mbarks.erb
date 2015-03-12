@@ -2,37 +2,38 @@
 <%= erb :_weather, :layout => false %>
 
 <main>
-<h1>mBarks</h1>
-<h2>my mBarks</h2>
-<div id="user_mbark_list">
-  <% @current_user.events.each do |event| %>
-    <ul>
-      <li>Date: <%= event.date %></li>
-      <li>Time: <%= event.time %></li>
-      <li>Park Address: <%= event.street_address %></li>
-      <li>City: <%= event.city %></li>
-      <li>State: <%= event.state %></li>
-      <li>Zip: <%= event.zip %></li>
-      <li>Description: <%= event.description %></li>
-    </ul>
-  <% end %>
-</div>
-<h2>all mBarks</h2>
-<div id="all_mbark_list">
-  <% Event.all.each do |event| %>
-    <ul>
-      <li>Date: <%= event.date %></li>
-      <li>Time: <%= event.time %></li>
-      <li>Park Address: <%= event.street_address %></li>
-      <li>City: <%= event.city %></li>
-      <li>State: <%= event.state %></li>
-      <li>Zip: <%= event.zip %></li>
-      <li>Description: <%= event.description %></li>
-    </ul>
-  <% end %>
-</div>
-<div id="add_event">
-  <a href="#">Add An mBark!</a>
-  <%= erb :_mbarks_new, :layout => false, :locals => { :current_user => current_user } %>
-</div>
+  <h1>mBarks</h1>
+  <a id="show_add_mbark_form" href="#">Add An mBark!</a>
+  <div id="add_event">
+    <%= erb :_mbarks_new, :layout => false, :locals => { :current_user => current_user } %>
+  </div>
+  <h2>my mBarks</h2>
+  <div id="user_mbark_list">
+    <% @user_events.each do |event| %>
+      <ul>
+        <li>Date: <%= event.date %></li>
+        <li>Time: <%= event.time %></li>
+        <li>Park Address: <%= event.street_address %></li>
+        <li>City: <%= event.city %></li>
+        <li>State: <%= event.state %></li>
+        <li>Zip: <%= event.zip %></li>
+        <li>Description: <%= event.description %></li>
+      </ul>
+    <% end %>
+  </div>
+  <h2>all mBarks</h2>
+  <div id="all_mbark_list">
+    <% @non_user_events.each do |event| %>
+      <ul>
+        <li>Date: <%= event.date %></li>
+        <li>Time: <%= event.time %></li>
+        <li>Park Address: <%= event.street_address %></li>
+        <li>City: <%= event.city %></li>
+        <li>State: <%= event.state %></li>
+        <li>Zip: <%= event.zip %></li>
+        <li>Description: <%= event.description %></li>
+      </ul>
+      <button class="join_mbark" type="button">Join mBark</button>
+    <% end %>
+  </div>
 </main>

@@ -17,7 +17,9 @@ get '/users/:id' do
 end
 
 get '/mbarks' do
-  @mbarks = Mbark.all
+  @user_events = current_user.events
+  @all_events = Event.all
+  @non_user_events = @all_events - @user_events
   erb :mbarks
 end
 
@@ -25,6 +27,8 @@ get '/dogs' do
   @dogs  = Dog.all
   erb :dogs
 end
+
+
 
 
 # POST ===========================================================
