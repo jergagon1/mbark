@@ -4,6 +4,15 @@
   margin: 0 auto;
 }
 
+
+/**************************** weather aside styling *********************************/
+
+#weather {
+  display: block;
+  width: 25%;
+  float: right;
+}
+
 /**************************** nav bar styling *********************************/
 
 nav {

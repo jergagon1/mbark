@@ -25,7 +25,6 @@ display a list of current events
 Shit to deal with
 
 1. Profile Page
-    A. Default dog photo (validation in model?) WED
     B. Javascript form and button hiding for add a dog WED
 
 2. mBarks Page
@@ -33,7 +32,6 @@ Shit to deal with
     B. Fix Time format Check w/ Sam S.    WED
     C. Show and hide Add mBark form/button w/ JS WED
     D. Button to add new event to my events  WED
-    E. Filter Events list to exclude events in my mBarks   WED
 
 
     Stretch Goals
