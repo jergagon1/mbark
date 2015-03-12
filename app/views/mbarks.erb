@@ -10,7 +10,8 @@
   <h2>my mBarks</h2>
   <div id="user_mbark_list">
     <% @user_events.each do |event| %>
-      <ul>
+      <ul class="event">
+        <li style="display: none"><%= event.id %></li>
         <li>Date: <%= event.date %></li>
         <li>Time: <%= event.time %></li>
         <li>Park Address: <%= event.street_address %></li>
@@ -24,7 +25,8 @@
   <h2>all mBarks</h2>
   <div id="all_mbark_list">
     <% @non_user_events.each do |event| %>
-      <ul>
+      <ul class="event">
+        <li style="display: none"><%= event.id %></li>
         <li>Date: <%= event.date %></li>
         <li>Time: <%= event.time %></li>
         <li>Park Address: <%= event.street_address %></li>
@@ -32,8 +34,8 @@
         <li>State: <%= event.state %></li>
         <li>Zip: <%= event.zip %></li>
         <li>Description: <%= event.description %></li>
+        <li><button class="join_mbark" type="button">Join mBark</button></li>
       </ul>
-      <button class="join_mbark" type="button">Join mBark</button>
     <% end %>
   </div>
 </main>

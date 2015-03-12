@@ -2,17 +2,18 @@ $(document).ready(function() {
 
 // Weather API
 
-
-
-$("#check_forecast").on("click", function(event){
-  console.log("weather button clicked");
-  event.preventDefault();
-  .ajax({
-    type: 'get',
-    url: 'api.openweathermap.org/data/2.5/find?q=San%20Francisco&units=imperial',
-
-  })
-
+var weatherAPI = 'http://api.openweathermap.org/data/2.5/weather';
+var data = {
+  q : "San Francisco,CA",
+  units : "imperial",
+};
+function showWeather(weatherReport) {
+  $('#city').text(weatherReport.name);
+  $('#temp').text(weatherReport.main.temp);
+  $('#conditions').text(weatherReport.weather[0].main);
+}
+$("#update_forecast").on("click", function(){
+  $.getJSON(weatherAPI, data, showWeather)
 });
 
 
@@ -33,6 +34,13 @@ var setInitialMbarksState = function() {
   showElement("#show_add_mbark_form");
 };
 
+var retrieveEventId = function(element) {
+  var indexListItem = $($($(element).parent()).parent()).children(":first");
+  var index = indexListItem.text();
+};
+
+//Controller
+
 
 // Event Handlers
 
@@ -47,16 +55,19 @@ $("#show_add_mbark_form").on("click", function(event){
   $("#add_event").show();
 })
 
+$
+
+$("#add_dog_button").on("click", function(event){
+  event.preventDefault();
+  $(this).hide();
+  $("#create-dog").show();
+})
 
 
-//Controller
+
+
+
 setInitialMbarksState();
-
-
-
-
-
-
 
 
 
