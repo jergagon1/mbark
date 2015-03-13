@@ -13,7 +13,9 @@ $(document).ready(function() {
     $('#conditions').text(weatherReport.weather[0].main);
   }
   $("#update_forecast").on("click", function(){
-    $.getJSON(weatherAPI, data, showWeather)
+    $.getJSON(weatherAPI, data, showWeather).fail(function(){
+      $(".error").text("Weather API is Down!")
+    })
   });
 
 
