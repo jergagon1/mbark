@@ -28,9 +28,6 @@ get '/dogs' do
   erb :dogs
 end
 
-
-
-
 # POST ===========================================================
 
 # sign-in
@@ -43,7 +40,6 @@ post '/sessions' do
     redirect '/'
   end
 end
-
 
 # sign-up a new user
 post '/users' do
@@ -74,9 +70,20 @@ post '/mbarks/new' do
 end
 
 
+
 # PUT ===========================================================
 
+put '/mbarks/add_user/:id' do
+  event_to_add = Event.find(params[:id])
+  current_user.events << event_to_add
 
+  content_type :json
+  { event: event_to_add }.to_json
+  # redirect "/mbarks"
+
+  # event_partial = erb :event_partial, locals: { event: event }, layout: false
+  # { partial: event_partial }.to_json
+end
 
 
 
