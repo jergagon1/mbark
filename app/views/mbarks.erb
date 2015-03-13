@@ -2,7 +2,7 @@
 <%= erb :_weather, :layout => false %>
 
 <div id="main_content">
-  <h1>mBarks</h1>
+  <h1 class="color_text">mBarks</h1>
   <button id="show_add_mbark_form">Add An mBark!</button>
   <div id="add_event">
     <%= erb :_mbarks_new, :layout => false, :locals => { :current_user => current_user } %>

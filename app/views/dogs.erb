@@ -3,7 +3,7 @@
 <%= erb :_weather, :layout => false %>
 
 <div id="main_content">
-  <h1>Dogs</h1>
+  <h1 class="color_text">Dogs</h1>
   <ul>
     <% @dogs.each do |dog|  %>
       <li><img class="dog_icon" src="<%= dog.image %>" /><%= "#{dog.name} #{dog.breed} #{dog.size} #{dog.description}" %></li>

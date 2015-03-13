@@ -19,6 +19,10 @@ h1, h2 {
   padding-bottom: 2rem;
 }
 
+.color_text {
+  color: #ff6600;
+}
+
 /**************************** page container styling *********************************/
 
 #page_container {
