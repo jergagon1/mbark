@@ -3,7 +3,7 @@
 
 <div id="main_content">
   <h1>mBarks</h1>
-  <a id="show_add_mbark_form" href="#">Add An mBark!</a>
+  <button id="show_add_mbark_form">Add An mBark!</button>
   <div id="add_event">
     <%= erb :_mbarks_new, :layout => false, :locals => { :current_user => current_user } %>
   </div>
@@ -18,7 +18,14 @@
         <li>City: <%= event.city %></li>
         <li>State: <%= event.state %></li>
         <li>Zip: <%= event.zip %></li>
-        <li>Description: <%= event.description %></li>
+        <li class="description"><p>Description: <%= event.description %></p></li>
+        <li>
+        <% event.users.each do |user| %>
+          <% user.dogs.each do |dog| %>
+            <img class="mbark_dog_icon" src="<%= dog.image %>" />
+          <% end %>
+        <% end %>
+        </li>
       </ul>
     <% end %>
   </div>
@@ -33,7 +40,14 @@
         <li>City: <%= event.city %></li>
         <li>State: <%= event.state %></li>
         <li>Zip: <%= event.zip %></li>
-        <li>Description: <%= event.description %></li>
+        <li class="description"><p>Description: <%= event.description %><p></li>
+        <li>
+        <% event.users.each do |user| %>
+          <% user.dogs.each do |dog| %>
+            <img class="mbark_dog_icon" src="<%= dog.image %>" />
+          <% end %>
+        <% end %>
+        </li>
         <li><button class="join_mbark" type="button">Join mBark</button></li>
       </ul>
     <% end %>
