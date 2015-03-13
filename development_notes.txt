@@ -25,12 +25,9 @@ display a list of current events
 Shit to deal with
 
 1. Profile Page
-    B. Javascript form and button hiding for add a dog WED
 
 2. mBarks Page
     C. Show and hide Add mBark form/button w/ JS WED
-    D. Button to add new event to my events  WED
-
 
     Stretch Goals
     F. List of dog image icons attending event   THURS
@@ -38,6 +35,4 @@ Shit to deal with
 
 3. Site Styling            THURS
 
-4.  Site Tessting         THURS
 
-5.   Post to Hiroku       THURS/FRI? morning?

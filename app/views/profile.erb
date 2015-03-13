@@ -1,7 +1,7 @@
 <%= erb :_nav, :layout => false %>
 <%= erb :_weather, :layout => false %>
 
-<main>
+<div id="main_content">
   <h1>Profile</h1>
   <div id="contact">
     <h2><%= @current_user.username %></h2>
@@ -22,10 +22,10 @@
         </ul>
       </div>
       <% end %>
-    </ul>
+    </div>
+    <div id="add_dogs">
+      <button id="add_dog_button">Add a Dog</button>
+      <%= erb :_dogs_new, :layout => false  %>
+    </div>
   </div>
-  <div id="add_dogs">
-    <button id="add_dog_button">Add a Dog</button>
-    <%= erb :_dogs_new, :layout => false  %>
-  </div>
-</main>
+</div>

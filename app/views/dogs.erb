@@ -1,11 +1,11 @@
 <%= erb :_nav, :layout => false %>
 <%= erb :_weather, :layout => false %>
 
-<main>
+<div id="main_content">
   <h1>Dogs</h1>
   <ul>
     <% @dogs.each do |dog|  %>
       <li><img class="dog_icon" src="<%= dog.image %>" /><%= "#{dog.name} #{dog.breed} #{dog.size} #{dog.description}" %></li>
     <% end  %>
   </ul>
-</main>
+</div>
