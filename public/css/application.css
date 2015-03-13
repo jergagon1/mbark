@@ -1,20 +1,12 @@
-/**************************** main content styling *********************************/
+/**************************** global styling *********************************/
 
 * {
-  color: black;
+  color: 333;
   background-color: none;
 }
 
-#authentication {
-  width: 100%;
-}
-
-#main_content {
-  display: block;
-  width: 50%;
-  /*background-color: red;*/
-  float: left;
-  color: black;
+body {
+  background-color: #68A6E8;
 }
 
 ul {
@@ -23,17 +15,33 @@ ul {
   padding:0;
 }
 
-/*label {
-  color: black;
-}*/
+h1, h2 {
+  padding-bottom: 2rem;
+}
 
 /**************************** page container styling *********************************/
 
 #page_container {
   display: block;
   width: 70%;
-  margin: 0 auto;
+  margin: 1rem auto;
+  padding: 3rem;
+  padding-bottom: 5rem;
   background-color: white;
+  border-radius: 2rem;
+  overflow: auto;
+}
+
+
+/**************************** main content styling *********************************/
+
+
+#main_content {
+  display: block;
+  width: 70%;
+  float: left;
+  color: 333;
+  font-size: 1.5rem;
 }
 
 
@@ -43,7 +51,27 @@ ul {
   display: inline-block;
   width: 25%;
   float: right;
-  padding-top: 8rem;
+  padding-top: 2rem;
+}
+
+
+/************************** authentication styling *********************************/
+
+
+#authentication {
+  width: 100%;
+}
+
+#sign_in {
+  display: block;
+  width: 50%;
+  float: left;
+}
+
+#sign_up {
+  display: block;
+  width: 50%;
+  float: left;
 }
 
 /**************************** nav bar styling *********************************/
@@ -51,28 +79,53 @@ ul {
 nav {
   display: block;
   width: 100%;
-  height: 2rem;
+  height: 7rem;
   margin: 0;
   padding: 0;
-/*  border-bottom: 1px solid gray;
-  background-color: red;*/
+  font-size: 1.75rem;
+  border-bottom: 1px solid gray;
 }
 
 nav ul {
-/*  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;*/
   width: 100%;
   list-style: none;
   margin: 0;
   padding: 0;
+  padding-top: 1rem;
 }
 
 nav ul li {
   display: inline-block;
   width: 20%;
   float: left;
+}
+
+
+/**************************** mbark page styling *********************************/
+
+.event {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid gray;
+  border-radius: 1rem;
+  overflow: auto;
+}
+
+.event li {
+  display: inline;
+  float: left;
+  padding-right: 2rem;
+}
+
+.event li.description {
   padding-top: 1rem;
+  clear: both;
+  float: left;
+  display: block;
+}
+
+.mbark_dog_icon {
+  width: 5rem;
 }
 
 
@@ -89,11 +142,17 @@ nav ul li {
   list-style: none;
 }
 
+
 /**************************** dog page styling *********************************/
-
-
 
 .dog_icon {
   display: inline-block;
-  width : 5rem;
+  width : 6rem;
+}
+
+
+/**************************** user page styling *********************************/
+
+.users_list {
+  font-size: 1.75rem;
 }
